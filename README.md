@@ -40,3 +40,9 @@ Piggy-Hunt-Adventure/
 ├── game.js             # Core Engine Lifecycle (Three.js Loop, Shaders, Input Routing)
 ├── manifest.json       # Progressive Web App Configuration Manifest
 └── README.md           # Documentation & Engineering Blueprint
+```
+---
+## Visitor Stats
+
+![Views](https://komarev.com/ghpvc/?username=Sri535&color=brightgreen)
+![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=piggy-hunt)
