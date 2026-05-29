@@ -21,7 +21,13 @@
     <div id="ui-layer" style="display: none;">
         <div class="stats-top">
             <div class="stat-card">🪙 <span id="coin-count">0</span></div>
-            <div class="stat-card">⭐ <span id="xp-level">Lv. 1</span></div>
+            <div class="stat-container-xp">
+                <div class="stat-card">⭐ <span id="xp-level">Lv. 1</span></div>
+                <div class="xp-bar-wrapper">
+                    <div id="xp-bar-fill"></div>
+                    <span id="xp-remaining-text">0 / 50 to next level</span>
+                </div>
+            </div>
         </div>
         
         <div class="radar-container">
