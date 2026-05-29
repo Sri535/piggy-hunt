@@ -1,9 +1,42 @@
 {
   "name": "Piggy Hunt Adventure",
   "short_name": "PiggyHunt",
-  "start_url": "index.html",
+  "description": "Explore magical worlds, hunt hidden piggies, collect rewards and become the ultimate Piggy Hunter.",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#ff00cc",
-  "icons": [{ "src": "icon.png", "sizes": "512x512", "type": "image/png" }]
+  "orientation": "any",
+  "background_color": "#081120",
+  "theme_color": "#00d4ff",
+  "lang": "en",
+
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "categories": [
+    "games",
+    "entertainment",
+    "adventure"
+  ],
+
+  "screenshots": [
+    {
+      "src": "assets/screenshots/gameplay.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
 }
