@@ -12,7 +12,7 @@ An immersive, highly optimized 3D treasure-hunting browser game featuring real-t
 ## 🚀 Live Demo
 
 Play the production version instantly here: 
-👉 **[Deploy Link - Replace with your GitHub Pages URL]**
+👉 **Play game https://sri535.github.io/piggy-hunt/**
 
 ---
 
