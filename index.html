@@ -1,53 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Piggy Hunt Adventure | 3D Gyro Quest</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="importmap">
-        { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
-    </script>
-</head>
-<body>
-    <div id="loading-screen">
-        <div class="loader"></div>
-        <h1>PIGGY HUNT</h1>
-        <p>Generating Magical Worlds...</p>
-    </div>
-
-    <canvas id="game-canvas"></canvas>
-
-    <div id="ui-layer" style="display: none;">
-        <div class="stats-top">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <title>Piggy Hunt Adventure | 3D Gyro Quest</title>
+      <link rel="stylesheet" href="style.css">
+      <script type="importmap">
+         { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+      </script>
+   </head>
+   <body>
+      <div id="loading-screen">
+         <div class="loader"></div>
+         <h1>PIGGY HUNT</h1>
+         <p>Generating Magical Worlds...</p>
+      </div>
+      <canvas id="game-canvas"></canvas>
+      <div id="ui-layer" style="display: none;">
+         <div class="stats-top">
             <div class="stat-card">🪙 <span id="coin-count">0</span></div>
             <div class="stat-container-xp">
-                <div class="stat-card">⭐ <span id="xp-level">Lv. 1</span></div>
-                <div class="xp-bar-wrapper">
-                    <div id="xp-bar-fill"></div>
-                    <span id="xp-remaining-text">0 / 50 to next level</span>
-                </div>
+               <div class="stat-card">⭐ <span id="xp-level">Lv. 1</span></div>
+               <div class="xp-bar-wrapper">
+                  <div id="xp-bar-fill"></div>
+                  <span id="xp-remaining-text">0 / 50 to next level</span>
+               </div>
             </div>
-        </div>
-        
-        <div class="radar-container">
-            <div id="piggy-radar"></div>
-            <p>RADAR</p>
-        </div>
-
-        <div class="crosshair"></div>
-        
-        <div id="interaction-prompt">TAP TO CAPTURE!</div>
-    </div>
-
-    <div id="menu-overlay">
-        <div class="glass-panel">
+         </div>
+         <div id="world-announcement">NEW WORLD UNLOCKED!</div>
+         <div class="crosshair"></div>
+      </div>
+      <div class="radar-container">
+         <div id="piggy-radar"></div>
+         <p>RADAR</p>
+      </div>
+      <div class="crosshair"></div>
+      <div id="interaction-prompt">TAP TO CAPTURE!</div>
+      </div>
+      <div id="menu-overlay">
+         <div class="glass-panel">
             <h1>Piggy Hunt</h1>
             <button onclick="startGame()" class="btn-primary">START ADVENTURE</button>
             <p>Mobile: Move phone to look | Desktop: Mouse & WASD</p>
-        </div>
-    </div>
-
-    <script type="module" src="game.js"></script>
-</body>
+         </div>
+      </div>
+      <script type="module" src="game.js"></script>
+   </body>
 </html>
