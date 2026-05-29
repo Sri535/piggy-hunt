@@ -1,49 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-      <title>Piggy Hunt Adventure | 3D Gyro Quest</title>
-      <link rel="stylesheet" href="style.css">
-      <script type="importmap">
-         { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
-      </script>
-   </head>
-   <body>
-      <div id="loading-screen">
-         <div class="loader"></div>
-         <h1>PIGGY HUNT</h1>
-         <p>Generating Magical Worlds...</p>
-      </div>
-      <canvas id="game-canvas"></canvas>
-      <div id="ui-layer" style="display: none;">
-         <div class="stats-top">
-            <div class="stat-card">🪙 <span id="coin-count">0</span></div>
-            <div class="stat-container-xp">
-               <div class="stat-card">⭐ <span id="xp-level">Lv. 1</span></div>
-               <div class="xp-bar-wrapper">
-                  <div id="xp-bar-fill"></div>
-                  <span id="xp-remaining-text">0 / 50 to next level</span>
-               </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Piggy Hunt Adventure</title>
+
+<meta name="theme-color" content="#081120">
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.png">
+
+<link rel="stylesheet" href="style.css">
+
+<script async src="https://cdn.jsdelivr.net/npm/es-module-shims@1.10.0/dist/es-module-shims.min.js"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+
+<body>
+
+<!-- ===================== SPLASH ===================== -->
+
+<div id="splashScreen" class="screen active">
+
+    <div class="logoContainer">
+        <div class="pigIcon">🐷</div>
+        <h1>Piggy Hunt Adventure</h1>
+        <p>Explore • Hunt • Collect • Upgrade</p>
+    </div>
+
+</div>
+
+<!-- ===================== LOADING ===================== -->
+
+<div id="loadingScreen" class="screen">
+
+    <div class="loadingBox">
+
+        <h2>Loading World...</h2>
+
+        <div class="loadingBar">
+            <div id="loadingProgress"></div>
+        </div>
+
+        <span id="loadingText">Preparing Piggies...</span>
+
+    </div>
+
+</div>
+
+<!-- ===================== MAIN MENU ===================== -->
+
+<div id="mainMenu" class="screen">
+
+    <div class="menuPanel">
+
+        <h1>Piggy Hunt Adventure</h1>
+
+        <button id="playBtn" class="mainBtn">
+            PLAY
+        </button>
+
+        <button id="worldBtn" class="mainBtn">
+            WORLDS
+        </button>
+
+        <button id="shopBtn" class="mainBtn">
+            SHOP
+        </button>
+
+        <button id="collectionBtn" class="mainBtn">
+            COLLECTION
+        </button>
+
+        <button id="settingsBtn" class="mainBtn">
+            SETTINGS
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ===================== WORLD SELECT ===================== -->
+
+<div id="worldScreen" class="screen">
+
+    <div class="glassWindow">
+
+        <h2>Select World</h2>
+
+        <div class="worldGrid">
+
+            <div class="worldCard forest">
+                <h3>🌳 Forest</h3>
+                <span>Unlocked</span>
             </div>
-         </div>
-         <div id="world-announcement">NEW WORLD UNLOCKED!</div>
-         <div class="crosshair"></div>
-      </div>
-      <div class="radar-container">
-         <div id="piggy-radar"></div>
-         <p>RADAR</p>
-      </div>
-      <div class="crosshair"></div>
-      <div id="interaction-prompt">TAP TO CAPTURE!</div>
-      </div>
-      <div id="menu-overlay">
-         <div class="glass-panel">
-            <h1>Piggy Hunt</h1>
-            <button onclick="startGame()" class="btn-primary">START ADVENTURE</button>
-            <p>Mobile: Move phone to look | Desktop: Mouse & WASD</p>
-         </div>
-      </div>
-      <script type="module" src="game.js"></script>
-   </body>
+
+            <div class="worldCard island">
+                <h3>🏝 Island</h3>
+                <span>Level 5</span>
+            </div>
+
+            <div class="worldCard snow">
+                <h3>❄ Snow</h3>
+                <span>Level 10</span>
+            </div>
+
+            <div class="worldCard volcano">
+                <h3>🌋 Volcano</h3>
+                <span>Level 15</span>
+            </div>
+
+            <div class="worldCard space">
+                <h3>🌌 Space</h3>
+                <span>Level 25</span>
+            </div>
+
+        </div>
+
+        <button class="backBtn">Back</button>
+
+    </div>
+
+</div>
+
+<!-- ===================== SHOP ===================== -->
+
+<div id="shopScreen" class="screen">
+
+    <div class="glassWindow">
+
+        <h2>Piggy Shop</h2>
+
+        <div class="shopGrid">
+
+            <div class="shopItem">
+                <h3>Radar+</h3>
+                <p>500 Coins</p>
+            </div>
+
+            <div class="shopItem">
+                <h3>Zoom Lens</h3>
+                <p>800 Coins</p>
+            </div>
+
+            <div class="shopItem">
+                <h3>Night Vision</h3>
+                <p>1200 Coins</p>
+            </div>
+
+            <div class="shopItem">
+                <h3>Detector</h3>
+                <p>2000 Coins</p>
+            </div>
+
+        </div>
+
+        <button class="backBtn">Back</button>
+
+    </div>
+
+</div>
+
+<!-- ===================== COLLECTION ===================== -->
+
+<div id="collectionScreen" class="screen">
+
+    <div class="glassWindow">
+
+        <h2>Piggy Collection</h2>
+
+        <div class="collectionGrid">
+
+            <div class="pigCard">🐷 Common</div>
+            <div class="pigCard">✨ Golden</div>
+            <div class="pigCard">🌈 Rainbow</div>
+            <div class="pigCard">👻 Ghost</div>
+            <div class="pigCard">🐉 Dragon</div>
+
+        </div>
+
+        <button class="backBtn">Back</button>
+
+    </div>
+
+</div>
+
+<!-- ===================== GAMEPLAY ===================== -->
+
+<div id="gameContainer">
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD -->
+
+    <div id="hud">
+
+        <div class="topBar">
+
+            <div class="stat">
+                🪙 <span id="coins">0</span>
+            </div>
+
+            <div class="stat">
+                💎 <span id="gems">0</span>
+            </div>
+
+            <div class="stat">
+                ⭐ <span id="level">1</span>
+            </div>
+
+        </div>
+
+        <!-- Radar -->
+
+        <div id="radarContainer">
+
+            <div id="radarCircle">
+                <div id="radarArrow"></div>
+            </div>
+
+        </div>
+
+        <!-- Crosshair -->
+
+        <div id="crosshair">
+            +
+        </div>
+
+        <!-- Capture -->
+
+        <button id="captureBtn">
+            CAPTURE
+        </button>
+
+        <!-- XP -->
+
+        <div id="xpBar">
+
+            <div id="xpFill"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================== PAUSE ===================== -->
+
+<div id="pauseMenu" class="screen">
+
+    <div class="glassWindow">
+
+        <h2>Paused</h2>
+
+        <button class="mainBtn">Resume</button>
+        <button class="mainBtn">Settings</button>
+        <button class="mainBtn">Quit</button>
+
+    </div>
+
+</div>
+
+<!-- ===================== VICTORY ===================== -->
+
+<div id="victoryScreen" class="screen">
+
+    <div class="glassWindow">
+
+        <h1>Piggy Captured!</h1>
+
+        <div id="rewardText">
+            +100 Coins
+        </div>
+
+        <button class="mainBtn">
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ===================== INSTALL PWA ===================== -->
+
+<button id="installBtn">
+    Install App
+</button>
+
+<!-- ===================== JS ===================== -->
+
+<script type="module" src="game.js"></script>
+<script type="module" src="worlds.js"></script>
+<script type="module" src="piggies.js"></script>
+<script type="module" src="ui.js"></script>
+
+</body>
 </html>
