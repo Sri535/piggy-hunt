@@ -1,0 +1,9 @@
+{
+  "name": "Piggy Hunt Adventure",
+  "short_name": "PiggyHunt",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff00cc",
+  "icons": [{ "src": "icon.png", "sizes": "512x512", "type": "image/png" }]
+}
