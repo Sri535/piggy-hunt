@@ -1,20 +1,17 @@
 const CACHE_NAME =
 "piggy-hunt-v1";
-
+const BASE = 
+"/piggy-hunt/"
 const ASSETS = [
 
-"/",
-"/index.html",
-"/style.css",
-"/game.js",
-"/worlds.js",
-"/piggies.js",
-"/ui.js",
-
-"/manifest.json",
-
-"/assets/icons/icon-192.png",
-"/assets/icons/icon-512.png"
+BASE,
+BASE + "index.html",
+BASE + "style.css",
+BASE + "game.js",
+BASE + "worlds.js",
+BASE + "piggies.js",
+BASE + "ui.js",
+BASE + "manifest.json"
 ];
 
 /* ======================================
