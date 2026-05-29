@@ -19,7 +19,43 @@ body, html {
     padding: 2rem;
     text-align: center;
 }
+.stat-container-xp {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
+.xp-bar-wrapper {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 180px;
+    height: 14px;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+#xp-bar-fill {
+    height: 100%;
+    width: 0%; /* Dynamic */
+    background: linear-gradient(90deg, #00ffcc, #0077ff);
+    box-shadow: 0 0 8px #00ffcc;
+    transition: width 0.3s ease-out;
+}
+
+#xp-remaining-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+}
 .stats-top {
     position: absolute; top: 20px; left: 20px;
     display: flex; gap: 10px;
