@@ -5,22 +5,15 @@
 [![Engine: Three.js](https://img.shields.io/badge/Engine-Three.js%20(r160)-lightgrey.svg)](https://threejs.org/)
 [![Hosting: GitHub Pages](https://img.shields.io/badge/Hosting-GitHub%20Pages-green.svg)]()
 
-An immersive, highly optimized 3D treasure-hunting browser game featuring real-time hardware gyroscope tracking for mobile devices and standard FPS-style pointer controls for desktop browsers. Explore dynamic procedural environments, hunt unique piggy variations, and level up your skills.
-
----
-
-## 🚀 Live Demo
-
-Play the production version instantly here: 
-👉 **Play game https://sri535.github.io/piggy-hunt/**
-
-# 🐷 Piggy Hunt Adventure
-
 A beautiful 3D gyroscope-powered treasure hunting game built with HTML5, CSS3, Vanilla JavaScript, Three.js, WebGL, and Progressive Web App technologies.
 
 Explore magical worlds, discover hidden piggies, collect rewards, level up, unlock new environments, and become the ultimate Piggy Hunter.
 
+
 ---
+
+
+
 
 ## Features
 
@@ -174,7 +167,8 @@ Repository Settings
 
 Your game will be available at:
 
-https://YOUR_USERNAME.github.io/Piggy-Hunt-Adventure/
+Play the production version instantly here: 
+👉 **Play game https://sri535.github.io/piggy-hunt/**
 
 ---
 
