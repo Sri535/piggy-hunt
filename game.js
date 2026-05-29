@@ -719,3 +719,17 @@ if ("serviceWorker" in navigator) {
         }
     );
 }
+window.addEventListener(
+    "beforeunload",
+    () => {
+
+        localStorage.setItem(
+
+            "piggySave",
+
+            JSON.stringify(
+                Game.player
+            )
+        );
+    }
+);
